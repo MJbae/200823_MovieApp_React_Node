@@ -12,15 +12,15 @@ script:
   - docker run -e CI=true gentlemj/movie-app npm run test
 
 after_success:
-  - docker build -t gentlemj/docker-client ./client
-  - docker build -t gentlemj/docker-server ./server
-  - docker build -t gentlemj/docker-nginx ./nginx
+  - docker build -t gentlemj/movie-app-client ./client
+  - docker build -t gentlemj/movie-app-server ./server
+  - docker build -t gentlemj/movie-app-nginx ./nginx
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-  - docker push gentlemj/docker-client
-  - docker push gentlemj/docker-server
-  - docker push gentlemj/docker-nginx
+  - docker push gentlemj/movie-app-client
+  - docker push gentlemj/movie-app-server
+  - docker push gentlemj/movie-app-nginx
 # deploy:
 #   provider: elasticbeanstalk
 #   region: "ap-northeast-2"
