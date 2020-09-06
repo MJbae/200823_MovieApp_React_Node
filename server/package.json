@@ -8,12 +8,12 @@
     "npm": "6.9.0"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
-    "frontend": "npm run start --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+    "start": "node index.js",
+    "backend": "nodemon index.js",
+    "frontend": "npm run start --prefix ../client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix ../client\""
   },
-  "author": "John ahn",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
