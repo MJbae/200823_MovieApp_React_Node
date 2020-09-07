@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:6.2.2
 
 WORKDIR /movie_app
 
