@@ -13,7 +13,6 @@ function LandingPage() {
     fetch(endpoint)
       .then((response) => response.json())
       .then((response) => {
-        // TODO:  [...response.results] -> ??
         setMovies([...Movies, ...response.results]);
         setMainMovieImage(response.results[0]);
         setCurrentPage(response.page);
@@ -22,6 +21,7 @@ function LandingPage() {
   };
 
   useEffect(() => {
+    console.log(process.env.NODE_ENV);
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
     fetchMovies(endpoint);
   }, []);
