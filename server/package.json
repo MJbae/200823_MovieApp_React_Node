@@ -11,12 +11,12 @@
     "start": "node index.js",
     "backend": "nodemon index.js",
     "frontend": "npm run start --prefix ../client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix ../client\""
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix ./../client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^3.0.8",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",

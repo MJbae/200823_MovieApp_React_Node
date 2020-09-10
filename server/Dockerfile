@@ -1,11 +1,16 @@
-FROM node:6.2.2
+FROM node:alpine
 
 WORKDIR /movie_app
 
 COPY ./package.json ./
 
-RUN npm install
+RUN apk --no-cache --virtual build-dependencies add \
+    python \
+    make \
+    g++ \
+    && npm install \
+    && apk del build-dependencies
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "backend"]
