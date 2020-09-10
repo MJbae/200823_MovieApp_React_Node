@@ -24,6 +24,6 @@ services:
       dockerfile: Dockerfile.dev
       context: ./server
     container_name: movie_app_server
-    # volumes:
-    #   - /movie_app/node_modules
-    #   - ./server:/movie_app
+    volumes:
+      - /movie_app/node_modules
+      - ./server:/movie_app
