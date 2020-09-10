@@ -13,4 +13,4 @@ RUN apk --no-cache --virtual build-dependencies add \
 
 COPY . .
 
-CMD ["npm", "run", "backend"]
+CMD ["npm", "run", "start"]
