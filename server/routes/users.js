@@ -32,6 +32,8 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log("1111111111111111111111111111111111111111111");
+  console.log(process.env.NODE_ENV);
   User.findOne({ email: req.body.email }, (err, user) => {
     if (!user)
       return res.json({
