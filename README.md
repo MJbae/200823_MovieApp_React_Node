@@ -8,7 +8,7 @@
 * Favorite, Load More, Detail page 구현
 
 ### 기술스택
-* React, Redux
+* React, Redux, Nginx
 * Node, MongoDB
 ### 배포환경
 * Docker, Travis CI
