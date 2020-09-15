@@ -6,11 +6,15 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-const config = require("./config/key");
+const dotenv = require("dotenv");
+const env = dotenv.config({ path: ".env" });
+if (env.error) {
+  throw env.error;
+}
 
 const mongoose = require("mongoose");
 const connect = mongoose
-  .connect(config.mongoURI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
