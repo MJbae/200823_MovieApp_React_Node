@@ -6,6 +6,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
+// env 활용해도 되지만 docker-compose.yml로 환경변수 관리하는게 더욱 편리
 const dotenv = require("dotenv");
 const env = dotenv.config({ path: ".env" });
 if (env.error) {
