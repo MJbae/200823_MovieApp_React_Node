@@ -1,0 +1,31 @@
+version: "3"
+services:
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    container_name: movie_app_client
+    volumes:
+      - /movie_app/node_modules
+      - ./client:/movie_app
+    stdin_open: true
+
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    container_name: movie_app_nginx
+    ports:
+      - "3000:80"
+
+  server:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    container_name: movie_app_server
+    volumes:
+      - /movie_app/node_modules
+      - ./server:/movie_app
+    environment:
+      - MONGO_URI=mongodb+srv://manjin:abcd1234@boilerplate.dq0kk.mongodb.net/<dbname>?authSource=admin&replicaSet=atlas-9y2g7v-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
