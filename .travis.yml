@@ -28,7 +28,7 @@ deploy:
   region: "ap-northeast-2"
   app: "movie-app"
   env: "MovieApp-env"
-  bucket_name: elasticbeanstalk-ap-northeast-2-558889086763
+  bucket_name: elasticbeanstalk-ap-northeast-2-297348835951
   bucket_path: "movie-app"
   on:
     branch: master
